@@ -18,7 +18,6 @@ def main():
         plttr = Plotter(x, y, style[i], plt_label[i], x_label, y_label, plt_title)
         plttr.plot()
 
-    plttr.plot()
     plttr.show()
 
 if __name__ == '__main__':

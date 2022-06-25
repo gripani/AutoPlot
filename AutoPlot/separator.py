@@ -10,10 +10,8 @@ class Separator:
             self.style = self.style.split(';')
             self.label = self.label.split(';')
             assert len(self.y) == len(self.style) == len(self.label)
-            n = len(self.y)
         else:
-            n = 1 
             self.y = [self.y]
             self.style = [self.style]
             self.label = [self.label]
-        return n, self.y, self.style, self.label  
+        return self.y, self.style, self.label  

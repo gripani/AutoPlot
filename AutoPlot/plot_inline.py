@@ -9,13 +9,13 @@ def main():
     fnct, x0, x1, style, plt_label, x_label, y_label, plt_title = pars.get_args()
 
     sep = Separator(fnct, style, plt_label)
-    n, fnct, style, plt_label = sep.separate()
+    fncts, styles, plt_labels = sep.separate()
 
 
-    for i in range(n):
-        exc = Execute(fnct[i], x0, x1)
+    for fnct, style, plt_label in zip(fncts, styles, plt_labels):
+        exc = Execute(fnct, x0, x1)
         x, y = exc.exc()
-        plttr = Plotter(x, y, style[i], plt_label[i], x_label, y_label, plt_title)
+        plttr = Plotter(x, y, style, plt_label, x_label, y_label, plt_title)
         plttr.plot()
 
     plttr.show()

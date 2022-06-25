@@ -23,10 +23,10 @@ class Plotter:
 
     def plot(self):
         plt.plot(self.x, self.y, self.style, label=self.label)
-        plt.legend(loc='upper left', bbox_to_anchor=(1.01, 1.), prop=self.font_dict)
-        plt.tight_layout()
     
     def show(self):
+        plt.legend(loc='upper left', bbox_to_anchor=(1.01, 1.), prop=self.font_dict)
+        plt.tight_layout()
         plt.show()
     
     def save(self, fname):

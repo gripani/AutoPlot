@@ -11,13 +11,14 @@ def main():
     sep = Separator(fnct, style, plt_label)
     fncts, styles, plt_labels = sep.separate()
 
-
-    for fnct, style, plt_label in zip(fncts, styles, plt_labels):
+    ys = []
+    for fnct in fncts:
         exc = Execute(fnct, x0, x1)
         x, y = exc.exc()
-        plttr = Plotter(x, y, style, plt_label, x_label, y_label, plt_title)
-        plttr.plot()
+        ys.append(y)
 
+    plttr = Plotter(x, ys, styles, plt_labels, x_label, y_label, plt_title)
+    plttr.plot()
     plttr.show()
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@ from AutoPlot.plotter import Plotter
 from AutoPlot.execute import Execute 
 from AutoPlot.parser import Parser
 
-def plot():
+def main():
     pars = Parser()
 
     fnct, x0, x1, style, plt_label, x_label, y_label, plt_title = pars.get_args()
@@ -14,4 +14,4 @@ def plot():
     plttr.show()
 
 if __name__ == '__main__':
-    plot()
+    main()

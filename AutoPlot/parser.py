@@ -9,7 +9,7 @@ def make_wide(formatter, w=120, h=36):
     except TypeError:
         warn("argparse help formatter failed, falling back.")
         return formatter
-
+        
 class Parser:
     def __init__(self):
         self.parser = ArgumentParser(formatter_class=make_wide(HelpFormatter))

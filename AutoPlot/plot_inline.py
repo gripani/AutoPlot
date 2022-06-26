@@ -1,25 +1,11 @@
-from AutoPlot.plotter import Plotter 
-from AutoPlot.execute import Execute 
 from AutoPlot.parser import Parser
-from AutoPlot.separator import Separator
+from AutoPlot.control import Control 
 
 def main():
     pars = Parser()
-
     fnct, x0, x1, style, plt_label, x_label, y_label, plt_title = pars.get_args()
-
-    sep = Separator(fnct, style, plt_label)
-    fncts, styles, plt_labels = sep.separate()
-
-    ys = []
-    for fnct in fncts:
-        exc = Execute(fnct, x0, x1)
-        x, y = exc.exc()
-        ys.append(y)
-
-    plttr = Plotter(x, ys, styles, plt_labels, x_label, y_label, plt_title)
-    plttr.plot()
-    plttr.show()
+    cntrl = Control(fnct, x0, x1, style, plt_label, x_label, y_label, plt_title)
+    cntrl.run()
 
 if __name__ == '__main__':
     main()

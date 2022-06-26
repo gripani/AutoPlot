@@ -1,16 +1,40 @@
-import argparse 
+import argparse
 
 class Parser:
     def __init__(self):
         self.parser = argparse.ArgumentParser()
-        self.parser.add_argument('--fnct', type=str, help='inline function of x to plot, separate multiple values with semicolumn')
-        self.parser.add_argument('--x0', type=str, help='lower limit of x-axis')
-        self.parser.add_argument('--x1', type=str, help='upper limit of x-axis')
-        self.parser.add_argument('--style', type=str, help='linestyle for plot function, separate multiple values with semicolumn')
-        self.parser.add_argument('--plt_label', type=str, help='label for plot function, separate multiple values with semicolumn')
-        self.parser.add_argument('--x_label', type=str, help='label for x-axis')
-        self.parser.add_argument('--y_label', type=str, help='label for y-axis')
-        self.parser.add_argument('--plt_title', type=str, help='plot title')
+        self.parser.add_argument('--fnct', 
+                                type=str, 
+                                help='inline function of x to plot, separate multiple values with semicolumn',
+                                metavar='<function>')
+        self.parser.add_argument('--x0', 
+                                type=str, 
+                                help='lower limit of x-axis',
+                                metavar='<x lower lim>')
+        self.parser.add_argument('--x1', 
+                                type=str, 
+                                help='upper limit of x-axis',
+                                metavar='<x upper lim>')
+        self.parser.add_argument('--style', 
+                                type=str, 
+                                help='linestyle for plot function, separate multiple values with semicolumn', 
+                                metavar='<linestyle>')
+        self.parser.add_argument('--plt_label', 
+                                type=str, 
+                                help='label for plot function, separate multiple values with semicolumn', 
+                                metavar='<plot label>')
+        self.parser.add_argument('--x_label', 
+                                type=str, 
+                                help='label for x-axis', 
+                                metavar='<x label>')
+        self.parser.add_argument('--y_label', 
+                                type=str, 
+                                help='label for y-axis', 
+                                metavar='<y label>')
+        self.parser.add_argument('--plt_title', 
+                                type=str, 
+                                help='title of the figure', 
+                                metavar='<plot title>')
     
     def get_args(self):
         args = self.parser.parse_args()

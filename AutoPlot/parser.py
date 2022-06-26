@@ -20,11 +20,11 @@ class Parser:
         self.parser.add_argument('--x0', 
                                 type=str, 
                                 help='lower limit of x-axis',
-                                metavar='<x lower lim>')
+                                metavar='<x lower limit>')
         self.parser.add_argument('--x1', 
                                 type=str, 
                                 help='upper limit of x-axis',
-                                metavar='<x upper lim>')
+                                metavar='<x upper limit>')
         self.parser.add_argument('--style', 
                                 type=str, 
                                 help='linestyle for plot function, separate multiple values with semicolumn', 

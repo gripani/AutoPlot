@@ -37,7 +37,7 @@ var = (
     'x',
 )
 
-delimiters = '+', '*', ')', '(', '/'
+delimiters = '+', '*', ')', '(', '/','-'
 
 def is_float(x):
     try:

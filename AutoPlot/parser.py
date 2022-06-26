@@ -1,8 +1,18 @@
-import argparse
+from argparse import ArgumentParser, HelpFormatter
+from warnings import warn  
+
+def make_wide(formatter, w=120, h=36):
+    try:
+        kwargs = {'width': w, 'max_help_position': h}
+        formatter(None, **kwargs)
+        return lambda prog: formatter(prog, **kwargs)
+    except TypeError:
+        warn("argparse help formatter failed, falling back.")
+        return formatter
 
 class Parser:
     def __init__(self):
-        self.parser = argparse.ArgumentParser()
+        self.parser = ArgumentParser(formatter_class=make_wide(HelpFormatter))
         self.parser.add_argument('--fnct', 
                                 type=str, 
                                 help='inline function of x to plot, separate multiple values with semicolumn',
@@ -35,7 +45,7 @@ class Parser:
                                 type=str, 
                                 help='title of the figure', 
                                 metavar='<plot title>')
-    
+
     def get_args(self):
         args = self.parser.parse_args()
         fnct = args.fnct 

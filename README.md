@@ -1,4 +1,5 @@
 Description:
+
 AutoPlot is a simple tool that allows you to plot functions
 
 Installation:

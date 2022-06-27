@@ -56,5 +56,5 @@ class Widget(Frame):
     
 def mainApp(title, size, control_run):
     app = App(False)
-    widget = Widget(None, title, size, control_run)
+    Widget(None, title, size, control_run)
     app.MainLoop()

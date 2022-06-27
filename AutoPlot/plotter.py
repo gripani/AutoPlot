@@ -23,7 +23,7 @@ class Plotter:
 
     def plot(self):
         for y, style, label in zip(self.ys, self.styles, self.labels):
-            plt.plot(self.x, y, style, label=label)
+            plt.plot(self.x, y, style.strip(), label=label.strip())
     
     def show(self):
         plt.legend(loc='upper left', bbox_to_anchor=(1.01, 1.), prop=self.font_dict)

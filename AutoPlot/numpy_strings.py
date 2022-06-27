@@ -51,6 +51,7 @@ def numpyize(strn):
     reptrn = '|'.join(map(re.escape, delimiters))
     splitted_string = re.split(reptrn, strn)
     for obj in splitted_string:
+        obj = obj.strip()
         if not (obj in cases + var or is_float(obj) or obj == ''):
             raise NumpyizeException(obj, cases + var)
 

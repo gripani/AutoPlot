@@ -10,9 +10,9 @@ def create_text_control(panel, sizer, text_label, label_pos, text_pos, default_v
     return text_obj
 
 def create_button(panel, sizer, btn_label, btn_pos, btn_effect): 
-        btn = Button(panel, label=btn_label, pos=btn_pos)
-        btn.Bind(EVT_BUTTON, btn_effect)
-        sizer.Add(btn, 0, ALL|CENTER, 5)
+    btn = Button(panel, label=btn_label, pos=btn_pos)
+    btn.Bind(EVT_BUTTON, btn_effect)
+    sizer.Add(btn, 0, ALL|CENTER, 5)
 
 class Widget(Frame):
 

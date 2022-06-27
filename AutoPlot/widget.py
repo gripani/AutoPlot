@@ -1,5 +1,18 @@
 from wx import App, Frame, Panel, BoxSizer, TextCtrl, StaticText, Button, VERTICAL, ALL, EXPAND, CENTER, EVT_BUTTON
 
+def create_text_control(panel, sizer, text_label, label_pos, text_pos, default_value, tool_tip):
+    label_obj = StaticText(panel, label=text_label, pos=label_pos)
+    sizer.Add(label_obj, 0, ALL|EXPAND, 5)
+    text_obj = TextCtrl(panel, pos=text_pos, value=default_value)
+    text_obj.SetToolTip(tool_tip)
+    sizer.Add(text_obj, 0, ALL|EXPAND, 5)
+    return text_obj
+
+def create_button(panel, sizer, btn_label, btn_pos, btn_effect): 
+        btn = Button(panel, label=btn_label, pos=btn_pos)
+        btn.Bind(EVT_BUTTON, btn_effect)
+        sizer.Add(btn, 0, ALL|CENTER, 5)
+
 class Widget(Frame):
 
     def __init__(self, parent, title, size, control_run):
@@ -8,58 +21,23 @@ class Widget(Frame):
         panel = Panel(self)
         sizer = BoxSizer(VERTICAL)
 
-        label_fnct = StaticText(panel, label='function:', pos=(5, 5))
-        sizer.Add(label_fnct, 0, ALL|EXPAND, 5)
-        self.text_fnct = TextCtrl(panel, pos=(75, 5), value='sin(x); cos(x)')
-        self.text_fnct.SetToolTip('inline function of x to plot, separate multiple values with semicolumn')
-        sizer.Add(self.text_fnct, 0, ALL|EXPAND, 5)
-
-        label_x0 = StaticText(panel, label='x lower lim:', pos=(5, 35))
-        sizer.Add(label_x0, 0, ALL|EXPAND, 5)
-        self.text_x0 = TextCtrl(panel, pos=(75, 35), value='-pi')
-        self.text_x0.SetToolTip('lower limit of x-axis')
-        sizer.Add(self.text_x0, 0, ALL|EXPAND, 5)
-
-        label_x1 = StaticText(panel, label='x upper lim:', pos=(5, 65))
-        sizer.Add(label_x1, 0, ALL|EXPAND, 5)
-        self.text_x1 = TextCtrl(panel, pos=(75, 65), value='+pi')
-        self.text_x0.SetToolTip('upper limit of x-axis')
-        sizer.Add(self.text_x1, 0, ALL|EXPAND, 5)
-
-        label_style = StaticText(panel, label='linestyle:', pos=(5, 95))
-        sizer.Add(label_style, 0, ALL|EXPAND, 5)
-        self.text_style = TextCtrl(panel, pos=(75, 95), value='-; --')
-        self.text_style.SetToolTip('linestyle for plot function, separate multiple values with semicolumn')
-        sizer.Add(self.text_style, 0, ALL|EXPAND, 5)
-
-        label_plt_label = StaticText(panel, label='plot label:', pos=(5, 125))
-        sizer.Add(label_plt_label, 0, ALL|EXPAND, 5)
-        self.text_plt_label = TextCtrl(panel, pos=(75, 125), value='sin(x); cos(x)')
-        self.text_plt_label.SetToolTip('label for plot function, separate multiple values with semicolumn')
-        sizer.Add(self.text_plt_label, 0, ALL|EXPAND, 5)
-
-        label_x_label = StaticText(panel, label='x label:', pos=(5, 155))
-        sizer.Add(label_x_label, 0, ALL|EXPAND, 5)
-        self.text_x_label = TextCtrl(panel, pos=(75, 155), value='x (rad)')
-        self.text_x_label.SetToolTip('label for x-axis')
-        sizer.Add(self.text_x_label, 0, ALL|EXPAND, 5)
-
-        label_y_label = StaticText(panel, label='y label:', pos=(5, 185))
-        sizer.Add(label_y_label, 0, ALL|EXPAND, 5)
-        self.text_y_label = TextCtrl(panel, pos=(75, 185), value='y (au)')
-        self.text_y_label.SetToolTip('label for y-axis')
-        sizer.Add(self.text_y_label, 0, ALL|EXPAND, 5)
-
-        label_plt_title = StaticText(panel, label='plot title:', pos=(5, 215))
-        sizer.Add(label_plt_title, 0, ALL|EXPAND, 5)
-        self.text_plt_title = TextCtrl(panel, pos=(75, 215), value='Sin and Cos of x')
-        self.text_plt_title.SetToolTip('title of the figure')
-        sizer.Add(self.text_plt_title, 0, ALL|EXPAND, 5)
-
-        btn = Button(panel, label='Plot!', pos=(5, 255))
-        btn.Bind(EVT_BUTTON, self.on_press)
-        sizer.Add(btn, 0, ALL|CENTER, 5)
-
+        self.text_fnct = create_text_control(panel, sizer, 'function:', (5,5), (75,5), 'sin(x); cos(x)',
+                                            'inline function of x to plot, separate multiple values with semicolumn')
+        self.text_x0 = create_text_control(panel, sizer, 'x lower lim:', (5, 35), (75, 35), '-pi', 
+                                            'lower limit of x-axis')
+        self.text_x1 = create_text_control(panel, sizer, 'w upper lim:', (5, 65), (75, 65), '+pi',
+                                            'upper limit of x-axis')
+        self.text_style = create_text_control(panel, sizer, 'linestyle:', (5, 95), (75, 95), '-;--', 
+                                            'linestyle for plot function, separate multiple values with semicolumn')
+        self.text_plt_label = create_text_control(panel, sizer, 'plot label:', (5, 125), (75, 125), 'sin(x); cos(x)', 
+                                            'label for plot function, separate multiple values with semicolumn')
+        self.text_x_label = create_text_control(panel, sizer, 'x label:', (5, 155), (75, 155), 'x (rad)',
+                                            'label for x-axis')
+        self.text_y_label = create_text_control(panel, sizer, 'y label:', (5, 185), (75, 185), 'y (au)', 
+                                            'label for y-axis')
+        self.text_plt_title = create_text_control(panel, sizer, 'plot title:', (5, 215), (75, 215), 'Sin and Cos of x', 
+                                            'title of the figure')
+        create_button(panel, sizer, 'Plot!', (5, 255), self.on_press)
         self.Show()
 
     def on_press(self, event):
@@ -76,7 +54,6 @@ class Widget(Frame):
         
     
 def mainApp(title, size, control_run):
-
     app = App(False)
     widget = Widget(None, title, size, control_run)
     app.MainLoop()

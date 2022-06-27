@@ -1,6 +1,8 @@
-from pyforms import start_app
+from wx import App
 
 from .widget import Widget
 
 if __name__ == '__main__':
-    start_app(Widget)
+    app = App(False)
+    widget = Widget(None, 'AutoPlot', (400, 600))
+    app.MainLoop()

@@ -45,6 +45,6 @@ class Execute:
             self.x1 = numpyize(self.x1) 
         src = f"xi = np.linspace({self.x0}, {self.x1}, {self.n}); yi = np.array([{self.funct} for x in xi])"
         import numpy as np 
-        my_exec(src=src, globals={'np': np}, locals=kw, description='apply numpy call of x and y')
+        my_exec(src=src, globals={'np': np}, locals=kw, description='InternalPythonExecution')
         x, y = kw['xi'], kw['yi']
         return x, y 

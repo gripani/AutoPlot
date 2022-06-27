@@ -1,10 +1,9 @@
 from wx import Frame, Panel, BoxSizer, TextCtrl, StaticText, Button, VERTICAL, ALL, EXPAND, CENTER, EVT_BUTTON
 
-from .control import Control 
-
 class Widget(Frame):
 
-    def __init__(self, parent, title, size):
+    def __init__(self, parent, title, size, control_run):
+        self.control_run = control_run
         super().__init__(parent, title=title, size=size)
         panel = Panel(self)
         sizer = BoxSizer(VERTICAL)
@@ -65,7 +64,6 @@ class Widget(Frame):
         dict_values['x_label'] = self.text_x_label.GetValue() 
         dict_values['y_label'] = self.text_y_label.GetValue() 
         dict_values['plt_title'] = self.text_plt_title.GetValue() 
-        control = Control(**dict_values)
-        control.run()
+        self.control_run(**dict_values)
         
     

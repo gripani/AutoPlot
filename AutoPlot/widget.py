@@ -7,7 +7,7 @@ from AutoPlot.control import Control
 class Widget(BaseWidget):
 
     def __init__(self):
-        super().__init__('Simple example 1')
+        super().__init__('AutoPlot')
 
         self._fnct  = ControlText('Function',)
         self._x0 = ControlText('x Lower Limit')

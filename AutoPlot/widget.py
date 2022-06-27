@@ -1,4 +1,4 @@
-from wx import Frame, Panel, BoxSizer, TextCtrl, StaticText, Button, VERTICAL, ALL, EXPAND, CENTER, EVT_BUTTON
+from wx import App, Frame, Panel, BoxSizer, TextCtrl, StaticText, Button, VERTICAL, ALL, EXPAND, CENTER, EVT_BUTTON
 
 class Widget(Frame):
 
@@ -75,3 +75,8 @@ class Widget(Frame):
         self.control_run(**dict_values)
         
     
+def mainApp(title, size, control_run):
+
+    app = App(False)
+    widget = Widget(None, title, size, control_run)
+    app.MainLoop()

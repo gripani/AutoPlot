@@ -10,42 +10,42 @@ class Widget(Frame):
 
         label_fnct = StaticText(panel, label='function:', pos=(5, 5))
         sizer.Add(label_fnct, 0, ALL|EXPAND, 5)
-        self.text_fnct = TextCtrl(panel, pos=(75, 5))
+        self.text_fnct = TextCtrl(panel, pos=(75, 5), value='sin(x); cos(x)')
         sizer.Add(self.text_fnct, 0, ALL|EXPAND, 5)
 
         label_x0 = StaticText(panel, label='x lower lim:', pos=(5, 35))
         sizer.Add(label_x0, 0, ALL|EXPAND, 5)
-        self.text_x0 = TextCtrl(panel, pos=(75, 35))
+        self.text_x0 = TextCtrl(panel, pos=(75, 35), value='-pi')
         sizer.Add(self.text_x0, 0, ALL|EXPAND, 5)
 
         label_x1 = StaticText(panel, label='x upper lim:', pos=(5, 65))
         sizer.Add(label_x1, 0, ALL|EXPAND, 5)
-        self.text_x1 = TextCtrl(panel, pos=(75, 65))
+        self.text_x1 = TextCtrl(panel, pos=(75, 65), value='+pi')
         sizer.Add(self.text_x1, 0, ALL|EXPAND, 5)
 
         label_style = StaticText(panel, label='linestyle:', pos=(5, 95))
         sizer.Add(label_style, 0, ALL|EXPAND, 5)
-        self.text_style = TextCtrl(panel, pos=(75, 95))
+        self.text_style = TextCtrl(panel, pos=(75, 95), value='-; --')
         sizer.Add(self.text_style, 0, ALL|EXPAND, 5)
 
         label_plt_label = StaticText(panel, label='plot label:', pos=(5, 125))
         sizer.Add(label_plt_label, 0, ALL|EXPAND, 5)
-        self.text_plt_label = TextCtrl(panel, pos=(75, 125))
+        self.text_plt_label = TextCtrl(panel, pos=(75, 125), value='sin(x); cos(x)')
         sizer.Add(self.text_plt_label, 0, ALL|EXPAND, 5)
 
         label_x_label = StaticText(panel, label='x label:', pos=(5, 155))
         sizer.Add(label_x_label, 0, ALL|EXPAND, 5)
-        self.text_x_label = TextCtrl(panel, pos=(75, 155))
+        self.text_x_label = TextCtrl(panel, pos=(75, 155), value='x (rad)')
         sizer.Add(self.text_x_label, 0, ALL|EXPAND, 5)
 
         label_y_label = StaticText(panel, label='y label:', pos=(5, 185))
         sizer.Add(label_y_label, 0, ALL|EXPAND, 5)
-        self.text_y_label = TextCtrl(panel, pos=(75, 185))
+        self.text_y_label = TextCtrl(panel, pos=(75, 185), value='y (au)')
         sizer.Add(self.text_y_label, 0, ALL|EXPAND, 5)
 
         label_plt_title = StaticText(panel, label='plot title:', pos=(5, 215))
         sizer.Add(label_plt_title, 0, ALL|EXPAND, 5)
-        self.text_plt_title = TextCtrl(panel, pos=(75, 215))
+        self.text_plt_title = TextCtrl(panel, pos=(75, 215), value='Sin and Cos of x')
         sizer.Add(self.text_plt_title, 0, ALL|EXPAND, 5)
 
         btn = Button(panel, label='Plot!', pos=(5, 255))

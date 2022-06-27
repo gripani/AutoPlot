@@ -13,6 +13,8 @@ class Plotter:
     }
 
     def __init__(self, x, ys, styles, plt_labels, x_label, y_label, plt_title):
+        if len(plt.get_fignums()) > 0:
+            plt.close()
         self.x = x 
         self.ys = ys 
         self.styles = styles 

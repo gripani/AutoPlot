@@ -22,7 +22,7 @@ def my_exec(src, globals, locals, description):
         line_number = traceback.extract_tb(tb)[-1][1]
     else:
         return
-    raise InterpreterError(f"{error_class} at line {line_number} of {description}: {detail}" % (error_class, line_number, description, detail))
+    raise InterpreterError(f"{error_class} at line {line_number} of {description}: {detail}")
 
 class Execute:
 

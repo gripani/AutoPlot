@@ -4,6 +4,7 @@ def create_text_control(panel, sizer, text_label, label_pos, text_pos, default_v
     label_obj = StaticText(panel, label=text_label, pos=label_pos)
     sizer.Add(label_obj, 0, ALL|EXPAND, 5)
     text_obj = TextCtrl(panel, pos=text_pos, value=default_value)
+    print(text_obj.SetSize(220, 23))
     text_obj.SetToolTip(tool_tip)
     sizer.Add(text_obj, 0, ALL|EXPAND, 5)
     return text_obj

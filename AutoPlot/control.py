@@ -29,3 +29,5 @@ class Control:
         plttr = Plotter(x, ys, styles, plt_labels, self.x_label, self.y_label, self.plt_title)
         plttr.plot()
         plttr.show()
+    
+    

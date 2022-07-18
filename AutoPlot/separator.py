@@ -9,7 +9,7 @@ class Separator:
             self.fnct = self.fnct.split(';')
             self.style = self.style.split(';')
             self.label = self.label.split(';')
-            assert len(self.fnct) == len(self.style) == len(self.label), 'Semicolumn separated values must have the same lengths'
+            assert len(self.fnct) == len(self.style) == len(self.label), 'Semicolumn separated values (function, style and label) must have the same lengths'
         else:
             self.fnct = [self.fnct]
             self.style = [self.style]

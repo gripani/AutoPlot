@@ -26,5 +26,5 @@ python -m AutoPlot.plot_gui
 
 Web App
 ``` 
-python WebApp.my_server.py
+python ./WebApp/my_server.py
 ``` 

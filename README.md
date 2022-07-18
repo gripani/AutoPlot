@@ -6,9 +6,9 @@ In WebApp there is also an example of usage with pyscript.
 Installation:
 
 ```
-python readme.py bdist_wheel
-python readme.py build
-python readme.py install
+python setup.py bdist_wheel
+python setup.py build
+python setup.py install
 ```
 move the wheel file into the templates folder of WebApp
 

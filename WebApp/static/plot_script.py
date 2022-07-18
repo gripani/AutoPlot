@@ -3,17 +3,20 @@ from AutoPlot.control import Control
 def getElementById(element_id):
     return Element(element_id)
 
+def getElementValueById(element_id):
+    return Element(element_id).value 
+
 def sub(*args, **kwargs):
     output = getElementById("output")
     error = getElementById("error")
-    fnct = getElementById("fnct").value
-    x0 = getElementById("x0").value  
-    x1 = getElementById("x1").value 
-    style = getElementById("style").value 
-    plt_label = getElementById("plt_label").value 
-    x_label = getElementById("x_label").value 
-    y_label = getElementById("y_label").value 
-    plt_title = getElementById("plt_title").value
+    fnct = getElementValueById("fnct")
+    x0 = getElementValueById("x0")  
+    x1 = getElementValueById("x1") 
+    style = getElementValueById("style") 
+    plt_label = getElementValueById("plt_label") 
+    x_label = getElementValueById("x_label")
+    y_label = getElementValueById("y_label")
+    plt_title = getElementValueById("plt_title")
     try:
         cntrl = Control(fnct, x0, x1, style, plt_label, x_label, y_label, plt_title)
         html_plot = cntrl.run(html_render=True)

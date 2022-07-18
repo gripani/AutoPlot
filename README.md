@@ -10,7 +10,7 @@ python readme.py bdist_wheel
 python readme.py build
 python readme.py install
 ```
-move the wheel file into the static folder of WebApp
+move the wheel file into the templates folder of WebApp
 
 Usage:
 

@@ -5,6 +5,7 @@ AutoPlot is a simple tool that allows you to plot functions
 Installation:
 
 ```
+python readme.py bdist_wheel
 python readme.py build
 python readme.py install
 ```

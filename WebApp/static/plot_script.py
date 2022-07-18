@@ -1,4 +1,5 @@
 from AutoPlot.control import Control
+from AutoPlot.numpy_strings import NumpyizeException
 
 def getElementById(element_id):
     return Element(element_id)
@@ -23,4 +24,6 @@ def sub(*args, **kwargs):
         error.write("")
         output.write(html_plot)
     except AssertionError as e:
+        error.write(e)
+    except NumpyizeException as e:
         error.write(e)

@@ -15,7 +15,7 @@ class Control:
         self.y_label = y_label 
         self.plt_title = plt_title 
     
-    def run(self):
+    def run(self, html_render=False):
 
         sep = Separator(self.fnct, self.style, self.plt_label)
         fncts, styles, plt_labels = sep.separate()
@@ -28,6 +28,12 @@ class Control:
 
         plttr = Plotter(x, ys, styles, plt_labels, self.x_label, self.y_label, self.plt_title)
         plttr.plot()
-        plttr.show()
+
+        if html_render:
+            return plttr.render()
+        else:
+            plttr.show()
+            return None 
+            
     
     

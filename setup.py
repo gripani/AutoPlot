@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 from pathlib import Path 
 
 pwd = Path(__file__).parent 

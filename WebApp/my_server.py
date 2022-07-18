@@ -1,18 +1,8 @@
 import sys
-import cgi
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 HOST_NAME = "localhost"
 PORT = 8080
-
-def read_html_template(path):
-    """function to read HTML file"""
-    try:
-        with open(path) as f:
-            file = f.read()
-    except Exception as e:
-        file = e
-    return file
 
 class PythonServer(SimpleHTTPRequestHandler):
 

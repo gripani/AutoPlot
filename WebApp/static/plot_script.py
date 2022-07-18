@@ -5,6 +5,7 @@ def getElementById(element_id):
 
 def sub(*args, **kwargs):
     output = getElementById("output")
+    error = getElementById("error")
     fnct = getElementById("fnct").value
     x0 = getElementById("x0").value  
     x1 = getElementById("x1").value 
@@ -13,6 +14,11 @@ def sub(*args, **kwargs):
     x_label = getElementById("x_label").value 
     y_label = getElementById("y_label").value 
     plt_title = getElementById("plt_title").value
-    cntrl = Control(fnct, x0, x1, style, plt_label, x_label, y_label, plt_title)
-    html_plot = cntrl.run(html_render=True)
-    output.write(html_plot)
+    try:
+        cntrl = Control(fnct, x0, x1, style, plt_label, x_label, y_label, plt_title)
+        html_plot = cntrl.run(html_render=True)
+        error.write("")
+        output.write(html_plot)
+    except AssertionError as e:
+        error = getElementById("error")
+        error.write(e)

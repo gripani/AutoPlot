@@ -16,7 +16,7 @@
   <py-env>
     - matplotlib 
     - numpy 
-    - './AutoPlot-0.0.1-py3-none-any.whl'
+    - './static/AutoPlot-0.0.1-py3-none-any.whl'
   </py-env>
   <body>
     <div class="row g-3">
@@ -64,10 +64,11 @@
       <div class="col-md-6">
         <p class="h2">Plot Figure:</p>
         <div id="output"></div>
+        <p class="text-danger" id="error"></p>
       </div>
     </div>
 
-    <py-script src="plot_script.py">
+    <py-script src="static/plot_script.py">
     </py-script>
   </body>
 </html>

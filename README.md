@@ -10,7 +10,7 @@ python setup.py bdist_wheel
 python setup.py build
 python setup.py install
 ```
-move the wheel file into the templates folder of WebApp
+move the wheel file into the static folder in WebApp
 
 Usage:
 

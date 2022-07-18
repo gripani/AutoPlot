@@ -23,5 +23,4 @@ def sub(*args, **kwargs):
         error.write("")
         output.write(html_plot)
     except AssertionError as e:
-        error = getElementById("error")
         error.write(e)

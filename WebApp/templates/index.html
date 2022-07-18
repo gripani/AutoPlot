@@ -14,53 +14,54 @@
 
   </head>
   <py-env>
-- matplotlib 
-- numpy 
-- './AutoPlot-0.0.1-py3-none-any.whl'
+    - matplotlib 
+    - numpy 
+    - './AutoPlot-0.0.1-py3-none-any.whl'
   </py-env>
   <body>
     <div class="row g-3">
+        <div class="col-md-2"></div>
         <div class="col-md-4">
         <p class="h1">Automatic Plotter</p>
         <form onsubmit="return false">
           <div class="mb-3 row">
-            <label for="fnct" class="form-label">Functions:</label>
+            <label for="fnct" class="form-label bg-primary bg-gradient text-white">Functions:</label>
             <input type="text" id="fnct" name="fnct" value="sin(x)" class="form-control form-control-sm px-3">
           </div>
           <div class="mb-3 row">
-            <label for="x0" class="form-label">X0:</label>
+            <label for="x0" class="form-label bg-primary bg-gradient text-white">X0:</label>
             <input type="text" id="x0" name="x0" value="-pi" class="form-control form-control-sm px-3">
           </div>
           <div class="mb-3 row">
-            <label for="x0" class="form-label">X1:</label>
+            <label for="x0" class="form-label bg-primary bg-gradient text-white">X1:</label>
             <input type="text" id="x1" name="x1" value="pi" class="form-control form-control-sm px-3">  
           </div>
           <div class="mb-3 row">
-            <label for="style" class="form-label">Style:</label>
+            <label for="style" class="form-label bg-primary bg-gradient text-white">Style:</label>
             <input type="text" id="style" name="style" value="-" class="form-control form-control-sm px-3">
           </div>
           <div class="mb-3 row">
-            <label for="plt_label" class="form-label">Plot Label:</label>
+            <label for="plt_label" class="form-label bg-primary bg-gradient text-white">Plot Label:</label>
             <input type="text" id="plt_label" name="plt_label" value="sin" class="form-control form-control-sm px-3">
           </div>
           <div class="mb-3 row">
-            <label for="x_label" class="form-label">X Label:</label>
+            <label for="x_label" class="form-label bg-primary bg-gradient text-white">X Label:</label>
             <input type="text" id="x_label" name="x_label" value="x (rad)" class="form-control form-control-sm px-3">
           </div>
           <div class="mb-3 row">
-            <label for="y_label" class="form-label">Y Label:</label>
+            <label for="y_label" class="form-label bg-primary bg-gradient text-white">Y Label:</label>
             <input type="text" id="y_label" name="y_label" value="y (au)" class="form-control form-control-sm px-3">
           </div>
           <div class="mb-3 row">
-            <label for="plt_title" class="form-label">Plot Title:</label>
+            <label for="plt_title" class="form-label bg-primary bg-gradient text-white">Plot Title:</label>
             <input type="text" id="plt_title" name="plt_title" value="Sin of x" class="form-control form-control-sm px-3">
           </div>
           <div class="mb-3 row">
-            <button class="btn btn-primary" pys-onClick="sub" type="submit" id="btn-form">Submit</button>>
+            <button class="btn btn-success" pys-onClick="sub" type="submit" id="btn-form">Submit</button>
           </div>
         </form>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <p class="h2">Plot Figure:</p>
         <div id="output"></div>
       </div>
